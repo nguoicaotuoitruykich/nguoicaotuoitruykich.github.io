@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- Required meta tags -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>TRUY KÍCH – NCT</title>
+  <meta name="description" content="Đăng ký event clan tháng 8, Link Facebook, Link Discord. Link Zalo" />
+  <meta name="keywords" content="TRUY KÍCH – người cao tuổi" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="rating" content="general" />
+  <meta name="author" content="VTC MOBILE" />
+  <meta name="copyright" content="Truy Kích" />
+  <meta name="expires" content="never" />
+  <meta name="distribution" content="global" />
+  <meta name="RESOURCE-TYPE" content="DOCUMENT" />
+  <meta name="GENERATOR" content="Truy Kích" />
+  <meta name="googlebot" content="INDEX,FOLLOW,ARCHIVE" />
+  <meta name="robots" content="INDEX,FOLLOW,ARCHIVE" />
+
+  <!-- Bootstrap CSS -->
+  <meta property="og:title" content="TRUY KÍCH  – NCT" />
+  <meta property="og:site_name" content="truykich.vn" />
+  <meta property="og:description" content="Đăng ký event clan tháng 8, Link Facebook, Link Discord. Link Zalo!" />
+  <link rel="image_src" href="/LOGO-NCT.jpg" />
+  <link href="/favicon.ico" type="image/x-icon" rel="shortcut icon">
+  <meta property="og:image" content="/LOGO-NCT.jpg" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    canvas {
+      display: block;
+    }
+
+    #loveQuestion {
+      position: absolute;
+      left: 494px;
+      top: 182px;
+      font-size: 30px;
+      color: #ffffff;
+    }
+
+    input {
+      width: 200px;
+      font-size: 30px;
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+    }
+
+    #btnYes {
+      position: absolute;
+      left: 600px;
+      top: 303px;
+      background-color: #7bd806;
+      cursor: pointer;
+    }
+
+    #btnNo {
+      position: absolute;
+      left: 886px;
+      top: 305px;
+      background-color: #f4511e;
+      transition: 0.3s;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('/bg-nct.jpg');
+      background-size: cover;
+      position: relative
+        /* display: flex; */
+    }
+
+    .title {
+      color: #00ff00;
+      font-size: 1.1em;
+      margin: 8px 0;
+    }
+
+    .title a {
+      text-decoration: none;
+      color: white
+    }
+
+    .block {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      /* margin:  0 auto; */
+      width: 500px;
+      height: 250px;
+      background: linear-gradient(0deg, #000, #272727);
+    }
+
+    .block:before,
+    .block:after {
+      content: "";
+      position: absolute;
+      left: -2px;
+      top: -2px;
+      background: linear-gradient(45deg,
+          #fb0094,
+          #0000ff,
+          #00ff00,
+          #ffff00,
+          #ff0000,
+          #fb0094,
+          #0000ff,
+          #00ff00,
+          #ffff00,
+          #ff0000);
+      background-size: 400%;
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      z-index: -1;
+      animation: steam 20s linear infinite;
+    }
+
+    @keyframes steam {
+      0% {
+        background-position: 0 0;
+      }
+
+      50% {
+        background-position: 400% 0;
+      }
+
+      100% {
+        background-position: 0 0;
+      }
+    }
+
+    .block:after {
+      filter: blur(50px);
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+  <h1 id="loveQuestion">Bạn muốn tham gia event nhận thẻ vcoin 500k không?</h1>
+  <input type="button" id="btnYes" value="KHÔNG" onclick="yesClick()" />
+  <input type="button" id="btnNo" value="CÓ" onmouseover="noHover()" />
+
+
+  <div class="block">
+    <div>
+      <h2 class="title">
+        <a href="https://forms.gle/Ay5MFKRHCWcZ93nt6">Đăng ký tham gia event tháng 8</a>
+      </h2>
+      <br>
+      <h2 class="title">
+        <a href="https://discord.gg/RCwuVNTY6s">Link Disscord NCT</a>
+      </h2>
+      <br>
+      <h2 class="title">
+        <a href="https://zalo.me/g/nagkhv770">Link nhóm Zalo NCT</a>
+      </h2>
+      <br>
+      <h2 class="title">
+        <a href="https://www.facebook.com/groups/1270919219585383">Link Facebook NCT</a>
+      </h2>
+    </div>
+    </block>
+    <script>
+
+
+      window.onload = function () {
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+
+        var W = window.innerWidth;
+        var H = window.innerHeight;
+        canvas.width = W;
+        canvas.height = H;
+
+        var mp = 25; //max particles
+        var particles = [];
+        for (var i = 0; i < mp; i++) {
+          particles.push({
+            x: Math.random() * W, //x-coordinate
+            y: Math.random() * H, //y-coordinate
+            r: Math.random() * 4 + 1, //radius
+            d: Math.random() * mp, //density
+          });
+        }
+
+        function draw() {
+          ctx.clearRect(0, 0, W, H);
+
+          ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+          ctx.beginPath();
+          for (var i = 0; i < mp; i++) {
+            var p = particles[i];
+            ctx.moveTo(p.x, p.y);
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2, true);
+          }
+          ctx.fill();
+          update();
+        }
+
+        var angle = 0;
+        function update() {
+          angle += 0.01;
+          for (var i = 0; i < mp; i++) {
+            var p = particles[i];
+            p.y += Math.cos(angle + p.d) + 1 + p.r / 2;
+            p.x += Math.sin(angle) * 2;
+
+            if (p.x > W + 5 || p.x < -5 || p.y > H) {
+              if (i % 3 > 0) {
+                particles[i] = { x: Math.random() * W, y: -10, r: p.r, d: p.d };
+              } else {
+                if (Math.sin(angle) > 0) {
+                  particles[i] = { x: -5, y: Math.random() * H, r: p.r, d: p.d };
+                } else {
+                  particles[i] = { x: W + 5, y: Math.random() * H, r: p.r, d: p.d };
+                }
+              }
+            }
+          }
+        }
+
+        setInterval(draw, 33);
+      };
+
+      function yesClick() {
+        alert("Nếu bạn không muốn nhận theo cách này. CHúng tôi sẽ chuyển đến trang đăng ký event tháng 8 giúp bạn nhận 500k nhé");
+        window.location.replace("https://forms.gle/Ay5MFKRHCWcZ93nt6");
+      }
+
+      function noHover() {
+        var x = Math.floor(Math.random() * window.innerWidth);
+        var y = Math.floor(Math.random() * window.innerHeight);
+        document.getElementById("btnNo").style.left = x + "px";
+        document.getElementById("btnNo").style.top = y + "px";
+      }
+
+    </script>
+</body>
+
+</html>
