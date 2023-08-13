@@ -207,6 +207,6 @@ body {
 .hover07 figure:hover img {
     -webkit-filter: blur(0);
     filter: blur(0);
-    -webkit-transform: scale(1.6);
-    transform: scale(1.6);
+    -webkit-transform: scale(1.9);
+    transform: scale(1.9);
 }
