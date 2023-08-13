@@ -194,6 +194,7 @@
       display: block;
       transition: opacity 250ms ease-in, visibility 0ms ease-in 0ms;
       cursor: pointer;
+      overflow: hidden;
     }
 
     .map-default.showMap {
@@ -201,7 +202,25 @@
     }
 
     .map-default img {
-      max-width: 170px;
+      max-width: 200px;
+    }
+
+
+    .spinner-2 {
+      width: 50px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 8px solid lightblue;
+      border-right-color: orange;
+      animation: s2 1s infinite linear;
+      display: none;
+      margin: 25px 0;
+    }
+
+    @keyframes s2 {
+      to {
+        transform: rotate(1turn)
+      }
     }
 
     .map-random.showMap {
@@ -210,11 +229,33 @@
       transition: opacity 250ms ease-in, visibility 0ms ease-in 0ms;
       opacity: 1;
     }
+
+    .box-random {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hover07 figure img {
+      -webkit-filter: blur(3px);
+      filter: blur(3px);
+      -webkit-transition: .3s ease-in-out;
+      transition: .3s ease-in-out;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+
+    .hover07 figure:hover img {
+      -webkit-filter: blur(0);
+      filter: blur(0);
+      -webkit-transform: scale(1.3);
+      transform: scale(1.3);
+    }
   </style>
 </head>
 
 <body>
-
   <div class="wrap">
     <div class="container-fluid">
       <div class="row">
@@ -246,9 +287,13 @@
             </div>
             </block>
           </div>
-          <div class="mt-4">
-            <div onclick="btnStart()" id="hl" class="px-1 map-default">
-              <img src="/img/hl.jpg" class="img-fluid" />
+
+          <div class="mt-4 box-random">
+            <div id="spinner" class="spinner-2"></div>
+            <div id="hl" onclick="btnStart()" class="hover07 column px-1 map-default">
+              <div>
+                <figure><img src="/img/hl.jpg" class="img-fluid" /></figure>
+              </div>
             </div>
             <div id="map1" onclick="btnSubmitMap()" class="map-random px-1">
               <img src="/img/gt.PNG" class="img-fluid" />
@@ -269,7 +314,7 @@
               <img src="/img/kta.PNG" class="img-fluid" />
             </div>
           </div>
-          <h6 class="mt-2 text-center">Bấm và ảnh để Random Map</h6>
+          <h6 class="text-center">Bấm và ảnh để Random Map</h6>
           <div onclick="submitLucky()" class="xsmb mt-4">
             <h6>Bấm vào đây để lấy số may mắn</h6>
             <span id="numberRamdom" class="xsmb-number"></span>
@@ -492,9 +537,9 @@
     const date = new Date();
     let day = date.getDate()
     let month = date.getMonth() + 1;
-    setTimeout(function () {
-      alert(`Số may mắn ngày ${day} tháng ${month} của bạn là ${number}, Chúc bạn thành công`)
-    }, 1000)
+    // setTimeout(function () {
+    //   alert(`Số may mắn ngày ${day} tháng ${month} của bạn là ${number}, Chúc bạn thành công`)
+    // }, 1000)
   }
   function btnStart() {
     let e = document.getElementById('hl');
@@ -502,11 +547,12 @@
     btnSubmitMap()
   }
   function btnSubmitMap() {
+    var spinner = document.getElementById('spinner')
+    spinner.style.display = "block"
     var list = document.getElementsByClassName("map-random");
     for (var i = 0; i < list.length; i++) {
       var isHiddenMap = list[i].className.includes('showMap')
       if (isHiddenMap) {
-        console.log(list[i].classList)
         list[i].classList.remove("showMap")
         break;
       }
@@ -514,8 +560,9 @@
     var number = Math.floor(Math.random() * 6);
     let map = list[number]
     setTimeout(function () {
+      spinner.style.display = "none"
       map.classList.add("showMap");
-    }, 500)
+    }, 6000)
 
   }
 </script>
