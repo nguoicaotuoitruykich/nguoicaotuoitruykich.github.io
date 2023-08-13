@@ -513,7 +513,10 @@
     }
     var number = Math.floor(Math.random() * 6);
     let map = list[number]
-    map.classList.add("showMap");
+    setTimeout(function () {
+      map.classList.add("showMap");
+
+    }, 500)
 
   }
 </script>
