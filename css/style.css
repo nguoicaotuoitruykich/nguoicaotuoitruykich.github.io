@@ -198,8 +198,8 @@ body {
 .hover07 figure img {
     -webkit-filter: blur(3px);
     filter: blur(3px);
-    -webkit-transition: .3s ease-in-out;
-    transition: .3s ease-in-out;
+    -webkit-transition: .8s ease-in-out;
+    transition: .8s ease-in-out;
     -webkit-transform: scale(1);
     transform: scale(1);
 }
@@ -207,6 +207,6 @@ body {
 .hover07 figure:hover img {
     -webkit-filter: blur(0);
     filter: blur(0);
-    -webkit-transform: scale(1.9);
-    transform: scale(1.9);
+    -webkit-transform: scale(1.7);
+    transform: scale(1.7);
 }
