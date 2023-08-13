@@ -36,7 +36,7 @@
       padding: 0;
       font-family: 'Raleway', sans-serif;
     }
-
+  
     body {
       margin: 0;
       padding: 0;
@@ -46,76 +46,51 @@
       color: #ffffff
     }
 
-    .accountDetail-image {
-      text-align: center;
+    .account {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 0 0 15px 0;
+      border-radius: 10px;
+      display: block;
+      text-decoration: none;
+      color: #ffffff
     }
-
-    .accountDetail {
-      max-height: 85vh;
-      overflow-y: scroll;
-    }
-
-    .accountDetail::-webkit-scrollbar-track {
-      -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.866);
-      background-color: #23242487;
-    }
-
-    .accountDetail::-webkit-scrollbar {
-      width: 5px;
-      background-color: #f5f5f5e4;
-    }
-
-    .accountDetail::-webkit-scrollbar-thumb {
-      background-color: #000000;
-      border: 2px solid #555555;
+    .account-caption {
+      padding: 0 10px
     }
   </style>
 </head>
 
 <body>
-  <h2 class="text-center heading-title mt-3">Author: TungDT</h2>
-  <div class="accounts">
-    <div class="container">
-      <div class="row mt-3">
-        <div class="col-12	col-sm-12	col-md-12	col-lg-12	col-xl-12	col-xxl-12 mt-5">
-          <div class="accountDetail">
-            <div class="accountDetail-image mt-2">
-              <img class="img-fluid" src="https://shoptienanh.vn/assets/storage/images/account_J8VAW6.png" alt="">
-            </div>
-            <div class="accountDetail-image mt-2">
-              <img class="img-fluid" src="https://shoptienanh.vn/assets/storage/images/account_J8VAW6.png" alt="">
-            </div>
-            <div class="accountDetail-image mt-2">
-              <img class="img-fluid" src="https://shoptienanh.vn/assets/storage/images/account_J8VAW6.png" alt="">
-            </div>
-            <div class="accountDetail-image mt-2">
-              <img class="img-fluid" src="https://shoptienanh.vn/assets/storage/images/account_J8VAW6.png" alt="">
-            </div>
-            <div class="accountDetail-image mt-2">
-              <img class="img-fluid" src="https://shoptienanh.vn/assets/storage/images/account_J8VAW6.png" alt="">
-            </div>
-            <div class="accountDetail-image mt-2">
-              <img class="img-fluid" src="https://shoptienanh.vn/assets/storage/images/account_J8VAW6.png" alt="">
-            </div>
-            <div class="accountDetail-image mt-2">
-              <img class="img-fluid" src="https://shoptienanh.vn/assets/storage/images/account_J8VAW6.png" alt="">
-            </div>
+    <h2 class="text-center heading-title mt-3">Danh sach acc cho thue</h2>
+    <div class="accounts">
+      <div class="container-fluid">
+        <div class="row mt-3">
+          <div class="col-12	col-sm-6	col-md-4	col-lg-3	col-xl-3	col-xxl-3 mt-3">
+            <a class="account" href="/page/accountDetail.html">
+              <div class="account-image">
+                <img class="img-fluid" src="https://shoptienanh.vn/assets/storage/images/account_J8VAW6.png" alt="">
+              </div>
+              <div class="account-caption mt-2">
+                <div class="account-description">Cho thuê miễn phí</div>
+                <button type="button" class="btn btn-outline-primary account-btn-primary">Chi tiết</button>
+                <button type="button" class="btn btn-success account-btn-success">Liên hệ</button>
+              </div>
+            </a>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <script>
-    let obj =
-    {
-      id: 1,
-      price: 0,
-      image: 'img',
-      description: 'Cho anh em trong clan NCT mượn',
-      shareUser: 'namtramhaolan'
-    }
+    <script>
+      let obj =
+      {
+        id: 1,
+        price: 0,
+        image: 'img',
+        description: 'Cho anh em trong clan NCT mượn',
+        shareUser: 'namtramhaolan'
+      }
 
-  </script>
+    </script>
 </body>
 
 </html>
