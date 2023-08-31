@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    main {
+        width: 1000px;
+        height: 1000px
+    }
+
+    .number-count {
+        font-size: 80px;
+    }
+</style>
+
+<body>
+    <!-- <form onsubmit="myFunction()">
+        Số bắt đầu <input require id="start" name="start" type="number">
+        Số kết thúc <input require id="end" name="end" type="number">
+        <button type="submit">Set giá trị</button>
+
+    </form> -->
+    <input type="number" id="min" name="min" value="">
+    <input type="number" id="max" name="max" value="">
+    <input id="onSubmit" type="submit" id="submit">
+    <h1 id="numberCount"  value="" class="number-count"></h1>
+    <main id="myBody"></main>
+    
+
+    <script>
+        el = document.getElementById("myBody")
+        el.addEventListener("click", clickF);
+
+
+        document.getElementById("onSubmit").addEventListener("click", function () {
+            localStorage.clear()
+            var min = document.getElementById("min").value
+            var max = document.getElementById("max").value
+            console.log(min, max)
+            localStorage.setItem("min", min)
+            localStorage.setItem("max", max)
+        });
+
+
+        function clickF() {
+            var start = localStorage.getItem("min")
+            var end = localStorage.getItem("max")
+            if(start === end) {return alert('Kết thúc' + end)} ;
+            localStorage.setItem("min", ++start)
+            var text = `ngct${start}`;
+            document.getElementById("numberCount").innerHTML = text;
+            navigator.clipboard.writeText(text).then(function () {
+                console.log(text);
+            }, function (err) {
+                console.error('Async: Could not copy text: ', err);
+            });
+        }
+    </script>
+
+</body>
+
+</html>
