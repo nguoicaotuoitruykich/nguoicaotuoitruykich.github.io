@@ -11,19 +11,24 @@
         width: 100%;
         height: 1000px;
         background: rgb(68 195 195 / 26%);
+        padding: 5px 0;
     }
 
     .number-count {
         font-size: 80px;
+        padding: 0;
+        margin: 0;
     }
 </style>
 
 <body>
-    <input type="number" id="min" name="min" value="">
-    <input type="number" id="max" name="max" value="">
-    <input id="onSubmit" type="submit" id="submit">
+    <input type="number" placeholder="Số bắt đầu" id="min" name="min" value="">
+    <input type="number" placeholder="Số Kết thúc" id="max" name="max" value="">
+    <input id="onSubmit" type="submit" value="Gửi" id="submit">
+    <p>Nhập số rồi bấm Gửi</p>
     <h1 id="numberCount"  value="" class="number-count"></h1>
     <main id="myBody">
+        <h4>Nếu đã bấm "Gửi" Click vào vùng màu xanh này để copy tên</h4>
     </main>
     
 
