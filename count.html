@@ -9,7 +9,8 @@
 <style>
     main {
         width: 100%;
-        height: 1000px
+        height: 1000px;
+        background: rgb(68 195 195 / 26%);
     }
 
     .number-count {
@@ -22,13 +23,13 @@
     <input type="number" id="max" name="max" value="">
     <input id="onSubmit" type="submit" id="submit">
     <h1 id="numberCount"  value="" class="number-count"></h1>
-    <main id="myBody"></main>
+    <main id="myBody">
+    </main>
     
 
     <script>
         el = document.getElementById("myBody")
         el.addEventListener("click", clickF);
-
 
         document.getElementById("onSubmit").addEventListener("click", function () {
             localStorage.clear()
@@ -38,7 +39,6 @@
             localStorage.setItem("min", min)
             localStorage.setItem("max", max)
         });
-
 
         function clickF() {
             var start = localStorage.getItem("min")
