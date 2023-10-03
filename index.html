@@ -414,9 +414,6 @@
     var number = Math.floor(Math.random() * 100) + 1;
     let numToday = document.getElementById('numberRamdom')
     numToday.innerText = number
-    const date = new Date();
-    let day = date.getDate()
-    let month = date.getMonth() + 1;
   }
   function btnStart() {
     let e = document.getElementById('hl');
@@ -434,12 +431,16 @@
         break;
       }
     }
+    var oldNumber = number || 8;
     var number = Math.floor(Math.random() * 8);
+    if(number === oldNumber) {
+      number = number - 1
+    }
     let map = list[number]
     setTimeout(function () {
       spinner.style.display = "none"
       map.classList.add("showMap");
-    }, 5000)
+    }, 4000)
 
   }
 </script>
